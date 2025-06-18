@@ -1,0 +1,51 @@
+Summary of Trend Differences Between Churners and Non-Churners
+=============================================================
+
+ARPU - Nov to Dec Change:
+  Churners median: -69.83%
+  Non-churners median: -2.88%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+
+ARPU - Dec to Jan Change:
+  Churners median: -100.00%
+  Non-churners median: -1.56%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+
+On-Net Minutes - Nov to Dec Change:
+  Churners median: -54.84%
+  Non-churners median: -8.17%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+
+On-Net Minutes - Dec to Jan Change:
+  Churners median: -63.99%
+  Non-churners median: -6.21%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+
+Off-Net Minutes - Nov to Dec Change:
+  Churners median: -44.58%
+  Non-churners median: -4.63%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+
+Off-Net Minutes - Dec to Jan Change:
+  Churners median: -54.92%
+  Non-churners median: -3.02%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+
+Data Volume - Nov to Dec Change:
+  Churners median: -100.00%
+  Non-churners median: -19.64%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+
+Data Volume - Dec to Jan Change:
+  Churners median: -100.00%
+  Non-churners median: -19.72%
+  Mann-Whitney U p-value: 0.00000
+  Significant difference: Yes
+

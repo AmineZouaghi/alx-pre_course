@@ -1,0 +1,10 @@
+Highly correlated variable pairs (|ρ| > 0.7):
+Min_TT_Jan25 ⟷ Min_TT_Dec24: 0.771
+Min_HorsTT_Jan25 ⟷ Min_HorsTT_Dec24: 0.751
+Min_HorsTT_Jan25 ⟷ ARPU_Jan25: 0.742
+Min_TT_Dec24 ⟷ Min_TT_Nov24: 0.742
+Min_HorsTT_Nov24 ⟷ ARPU_Nov24: 0.739
+Min_HorsTT_Dec24 ⟷ ARPU_Dec24: 0.737
+Min_HorsTT_Dec24 ⟷ Min_HorsTT_Nov24: 0.713
+Volume_Data_Jan25 ⟷ Volume_Data_Dec24: 0.713
+Volume_Data_Dec24 ⟷ Volume_Data_Nov24: 0.707

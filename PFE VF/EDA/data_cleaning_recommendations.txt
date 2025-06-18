@@ -1,0 +1,226 @@
+=================================================================
+            TUNISIE TELECOM DATA CLEANING REPORT                 
+=================================================================
+Report generated on: 2025-06-17 02:43:59
+Dataset shape: 92943 rows × 33 columns
+
+1. MISSING VALUES ANALYSIS
+-------------------------
+
+Found 19 columns with missing values:
+
+- Data_Change_Nov_Dec: 70850.0 values (76.23%)
+- Data_Drop_Pct: 70792.0 values (76.17%)
+- Data_Change_Dec_Jan: 70792.0 values (76.17%)
+- Min_TT_Change_Dec_Jan: 12597.0 values (13.55%)
+- Min_TT_Change_Nov_Dec: 10243.0 values (11.02%)
+- Min_HorsTT_Change_Dec_Jan: 7947.0 values (8.55%)
+- Min_HorsTT_Change_Nov_Dec: 5408.0 values (5.82%)
+- Min_TT_ServiceClient_Jan25: 4000.0 values (4.30%)
+- Min_TT_Jan25: 4000.0 values (4.30%)
+- Min_HorsTT_Jan25: 4000.0 values (4.30%)
+- ARPU_Change_Dec_Jan: 2704.0 values (2.91%)
+- ARPU_Drop_Pct: 2704.0 values (2.91%)
+- Min_HorsTT_Dec24: 2021.0 values (2.17%)
+- Min_TT_Dec24: 2021.0 values (2.17%)
+- Min_TT_ServiceClient_Dec24: 2021.0 values (2.17%)
+- ARPU_Change_Nov_Dec: 1391.0 values (1.50%)
+- Min_TT_Nov24: 1.0 values (0.00%)
+- Min_TT_ServiceClient_Nov24: 1.0 values (0.00%)
+- Min_HorsTT_Nov24: 1.0 values (0.00%)
+
+Missing value patterns:
+
+- Usage metrics (minutes, data): Missing values likely represent no usage. Recommend replacing with 0.
+
+- ARPU metrics: Missing values could indicate no billing data. Recommend replacing with 0 for active months, or using mean/median for analysis months.
+
+RECOMMENDED ACTIONS:
+1. Replace missing usage values (minutes, data) with 0
+2. For ARPU, either replace with 0 or use median imputation based on tenure group
+3. For any derived features, handle missing values after creation
+
+
+2. OUTLIER ANALYSIS
+------------------
+
+Found outliers in 21 columns:
+
+- Volume_Data_Jan25: 22299 outliers (23.99%)
+  Range: [0.0 to 30036.2], Median: 0.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Volume_Data_Dec24: 22151 outliers (23.83%)
+  Range: [0.0 to 28395.42], Median: 0.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Volume_Data_Nov24: 22093 outliers (23.77%)
+  Range: [0.0 to 45735.41], Median: 0.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_TT_ServiceClient_Jan25: 19846 outliers (21.35%)
+  Range: [0.0 to 502.09], Median: 0.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_TT_ServiceClient_Dec24: 19224 outliers (20.68%)
+  Range: [0.0 to 916.24], Median: 0.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_TT_ServiceClient_Nov24: 18405 outliers (19.80%)
+  Range: [0.0 to 342.86], Median: 0.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_TT_Dec24: 11224 outliers (12.08%)
+  Range: [0.0 to 8157.78], Median: 32.74
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_TT_Nov24: 11200 outliers (12.05%)
+  Range: [0.0 to 7376.71], Median: 34.29
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_TT_Jan25: 10904 outliers (11.73%)
+  Range: [0.0 to 9977.41], Median: 32.24
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_HorsTT_Dec24: 8100 outliers (8.72%)
+  Range: [0.0 to 9667.13], Median: 92.74
+  Predominantly upper outliers, suggesting right-skewed distribution
+- ARPU_Drop_Pct: 7962 outliers (8.57%)
+  Range: [-7375170.0 to 2154030.0], Median: 2.513251472915518
+- Min_HorsTT_Nov24: 7947 outliers (8.55%)
+  Range: [0.0 to 8362.36], Median: 96.36
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Min_HorsTT_Jan25: 7897 outliers (8.50%)
+  Range: [0.0 to 14007.34], Median: 92.19
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Nbr_Recharges_Jan25: 5992 outliers (6.45%)
+  Range: [0 to 196], Median: 5.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Nbr_Recharges_Dec24: 5570 outliers (5.99%)
+  Range: [0 to 138], Median: 6.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- ARPU_Nov24: 5412 outliers (5.82%)
+  Range: [-2258.709 to 27731.088], Median: 205.227
+  Predominantly upper outliers, suggesting right-skewed distribution
+- Nbr_Recharges_Nov24: 5407 outliers (5.82%)
+  Range: [0 to 307], Median: 6.0
+  Predominantly upper outliers, suggesting right-skewed distribution
+- ARPU_Dec24: 5391 outliers (5.80%)
+  Range: [-1289.715 to 35145.834], Median: 195.799
+  Predominantly upper outliers, suggesting right-skewed distribution
+- ARPU_Jan25: 5173 outliers (5.57%)
+  Range: [-491.545 to 33543.624], Median: 192.966
+  Predominantly upper outliers, suggesting right-skewed distribution
+
+Outlier patterns by variable group:
+
+- ARPU metrics: Right-skewed distribution with extremely high values. Likely represents premium customers rather than errors.
+
+- Call minutes: Right-skewed with extreme values. May represent business users or unusual calling patterns.
+
+- Data usage: Extreme right skew. Likely represents heavy data users rather than errors.
+
+RECOMMENDED ACTIONS:
+1. For modeling: Winsorize values at 99th percentile to limit extreme influence
+2. For ARPU and usage metrics: Consider log transformation to normalize distributions
+3. Flag extreme outliers (>99.9 percentile) for separate business analysis
+
+
+3. DATA CONSISTENCY ANALYSIS
+---------------------------
+
+Significant zero value patterns detected:
+
+- ARPU_Jan25: 4783 zeros (5.15%)
+- Min_TT_Nov24: 8660 zeros (9.32%)
+- Min_TT_Dec24: 8512 zeros (9.16%)
+- Min_TT_Jan25: 8677 zeros (9.34%)
+- Min_TT_ServiceClient_Nov24: 74537 zeros (80.20%)
+- Min_TT_ServiceClient_Dec24: 71698 zeros (77.14%)
+- Min_TT_ServiceClient_Jan25: 69097 zeros (74.34%)
+- Volume_Data_Nov24: 70850 zeros (76.23%)
+- Volume_Data_Dec24: 70792 zeros (76.17%)
+- Volume_Data_Jan25: 70644 zeros (76.01%)
+
+Zero values may indicate:
+- Inactive customers or services
+- Data collection issues
+- Service suspensions
+
+RECOMMENDED ACTIONS:
+1. Create binary flags for 'has_usage' alongside continuous metrics
+2. For trend features, handle divisions by zero appropriately
+3. Consider filtering inactive customers for certain analyses
+
+Negative values detected in columns that should be non-negative:
+
+- ARPU_Nov24: 280 negative values (0.30%)
+- ARPU_Dec24: 441 negative values (0.47%)
+- ARPU_Jan25: 452 negative values (0.49%)
+- ARPU_Change_Nov_Dec: 48635 negative values (52.33%)
+- ARPU_Change_Dec_Jan: 47027 negative values (50.60%)
+- Min_TT_Change_Nov_Dec: 44970 negative values (48.38%)
+- Min_TT_Change_Dec_Jan: 42989 negative values (46.25%)
+- Min_HorsTT_Change_Nov_Dec: 46598 negative values (50.14%)
+- Min_HorsTT_Change_Dec_Jan: 44372 negative values (47.74%)
+- Data_Change_Nov_Dec: 13565 negative values (14.59%)
+- Data_Change_Dec_Jan: 13769 negative values (14.81%)
+- Data_Drop_Pct: 8377 negative values (9.01%)
+- ARPU_Drop_Pct: 43199 negative values (46.48%)
+
+RECOMMENDED ACTIONS:
+1. Replace negative ARPU/usage values with 0 (likely billing adjustments)
+2. Flag accounts with negative values for manual review
+
+
+4. RECOMMENDED FEATURE ENGINEERING
+----------------------------------
+
+Based on the data analysis, the following feature engineering is recommended:
+
+A. Trend Features:
+   - Month-over-month percentage changes for ARPU, minutes, and data
+   - Three-month trend directions (increasing, stable, decreasing)
+   - Volatility metrics (standard deviation of month-to-month changes)
+
+B. Ratio Features:
+   - Off-net to on-net call ratio
+   - Customer service call ratio to total calls
+   - Data to ARPU ratio (data intensity)
+
+C. Categorical Features:
+   - Tenure buckets (<6 months, 6-12 months, 1-2 years, >2 years)
+   - Usage pattern segments (high/medium/low for voice and data)
+   - ARPU tier categories
+
+D. Binary Indicators:
+   - Service call flag (contacted customer service: yes/no)
+   - Significant drop flags (>30% drop in usage or ARPU)
+   - Zero usage flags
+
+
+
+5. COMPREHENSIVE DATA CLEANING PLAN
+----------------------------------
+
+STEP 1: Handle Missing Values
+- Replace missing usage values with 0
+- Impute missing ARPU with 0 or median by tenure group
+- Create missing value indicators for sensitive analyses
+
+STEP 2: Address Outliers
+- Winsorize extreme values at 99th percentile
+- Apply log transformation to heavily skewed variables
+- Flag extreme outliers for separate analysis
+
+STEP 3: Fix Inconsistencies
+- Replace negative values with 0 for usage metrics
+- Create binary indicators for zero usage
+- Handle potential duplicates or errors
+
+STEP 4: Create Derived Features
+- Calculate trend and change features
+- Create ratio features
+- Generate categorical features
+- Add binary indicators
+
+STEP 5: Prepare for Modeling
+- Scale continuous features
+- Encode categorical variables
+- Create train/validation/test splits
+- Generate final modeling dataset
+
+=================================================================
+                      END OF REPORT                              
+=================================================================

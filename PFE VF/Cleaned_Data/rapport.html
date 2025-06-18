@@ -1,0 +1,1016 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Detailed Data Cleaning Report - Tunisie Telecom</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 20px;
+                    color: #333;
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                h1, h2, h3 {
+                    color: #2c3e50;
+                }
+                h1 {
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 10px;
+                }
+                .summary-box {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    padding: 15px;
+                    margin-bottom: 20px;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 20px;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+                tr:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+                .plot-container {
+                    margin: 30px 0;
+                    padding: 20px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                }
+                .plot-image {
+                    width: 100%;
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    display: block;
+                }
+                .stats-table {
+                    width: 100%;
+                    margin-top: 15px;
+                }
+                .improvement {
+                    color: #27ae60;
+                    font-weight: bold;
+                }
+                .important {
+                    font-weight: bold;
+                    color: #e74c3c;
+                }
+                .footer {
+                    margin-top: 50px;
+                    padding-top: 20px;
+                    border-top: 1px solid #ddd;
+                    text-align: center;
+                    font-size: 0.9em;
+                    color: #7f8c8d;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Detailed Data Cleaning Report - Tunisie Telecom</h1>
+                <p><strong>Date:</strong> 2025-06-17 04:51:30</p>
+                <p><strong>User:</strong> AmineZouaghi</p>
+                
+                <div class="summary-box">
+                    <h2>Executive Summary</h2>
+                    <p>This report details the data cleaning process applied to the Tunisie Telecom dataset using the IQR (Interquartile Range) method for outlier detection.</p>
+                    <table>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Count</th>
+                            <th>Percentage</th>
+                        </tr>
+                        <tr>
+                            <td>Total rows</td>
+                            <td>92943</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Missing values fixed</td>
+                            <td>18066</td>
+                            <td>0.93%</td>
+                        </tr>
+                        <tr>
+                            <td>Negative values corrected</td>
+                            <td>29</td>
+                            <td>0.00%</td>
+                        </tr>
+                        <tr>
+                            <td>Outliers capped (IQR method)</td>
+                            <td>91820</td>
+                            <td>5.20%</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h2>Data Distribution Analysis</h2>
+                <p>The following sections show how the data is distributed before and after cleaning for the columns with the most outliers.</p>
+                
+                <h3>How IQR Method Works</h3>
+                <p>The Interquartile Range (IQR) method identifies outliers based on the statistical distribution of the data:</p>
+                <ul>
+                    <li><strong>Q1 (First Quartile):</strong> 25th percentile of the data</li>
+                    <li><strong>Q3 (Third Quartile):</strong> 75th percentile of the data</li>
+                    <li><strong>IQR (Interquartile Range):</strong> Q3 - Q1</li>
+                    <li><strong>Lower Bound:</strong> Q1 - 1.5 × IQR</li>
+                    <li><strong>Upper Bound:</strong> Q3 + 1.5 × IQR</li>
+                </ul>
+                <p>Any values below the lower bound or above the upper bound are considered outliers and are capped at these thresholds.</p>
+        
+                <div class="plot-container">
+                    <h3>Column: Min_TT_Dec24</h3>
+                    <p><strong>Total Outliers:</strong> 11551 (12.43% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 11551</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Min_TT_Dec24.png" class="plot-image" alt="Distribution plot for Min_TT_Dec24">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>8157.78</td>
+                            <td>272.96</td>
+                            <td>-7884.81</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>131.48</td>
+                            <td>76.14</td>
+                            <td>-55.34</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>30.98</td>
+                            <td>30.98</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>305.90</td>
+                            <td>93.85</td>
+                            <td class="improvement">↓ 69.32%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>8157.78</td>
+                            <td>272.96</td>
+                            <td class="improvement">↓ 96.65%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>5.84</td>
+                            <td>5.84</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>112.69</td>
+                            <td>112.69</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>106.85</td>
+                            <td>106.85</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -154.43 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 272.96 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Min_TT_Jan25</h3>
+                    <p><strong>Total Outliers:</strong> 11523 (12.40% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 11523</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Min_TT_Jan25.png" class="plot-image" alt="Distribution plot for Min_TT_Jan25">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>9977.41</td>
+                            <td>262.38</td>
+                            <td>-9715.03</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>126.34</td>
+                            <td>72.42</td>
+                            <td>-53.93</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>28.81</td>
+                            <td>28.81</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>300.13</td>
+                            <td>90.31</td>
+                            <td class="improvement">↓ 69.91%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>9977.41</td>
+                            <td>262.38</td>
+                            <td class="improvement">↓ 97.37%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>4.63</td>
+                            <td>4.63</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>107.73</td>
+                            <td>107.73</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>103.10</td>
+                            <td>103.10</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -150.02 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 262.38 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Min_TT_Nov24</h3>
+                    <p><strong>Total Outliers:</strong> 11200 (12.05% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 11200</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Min_TT_Nov24.png" class="plot-image" alt="Distribution plot for Min_TT_Nov24">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>7376.71</td>
+                            <td>286.12</td>
+                            <td>-7090.59</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>132.49</td>
+                            <td>80.27</td>
+                            <td>-52.23</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>34.29</td>
+                            <td>34.29</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>297.06</td>
+                            <td>97.22</td>
+                            <td class="improvement">↓ 67.27%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>7376.71</td>
+                            <td>286.12</td>
+                            <td class="improvement">↓ 96.12%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>7.36</td>
+                            <td>7.36</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>118.86</td>
+                            <td>118.86</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>111.50</td>
+                            <td>111.50</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -159.90 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 286.12 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Min_HorsTT_Jan25</h3>
+                    <p><strong>Total Outliers:</strong> 8314 (8.95% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 8314</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Min_HorsTT_Jan25.png" class="plot-image" alt="Distribution plot for Min_HorsTT_Jan25">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>14007.34</td>
+                            <td>504.94</td>
+                            <td>-13502.41</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>187.69</td>
+                            <td>147.80</td>
+                            <td>-39.89</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>85.01</td>
+                            <td>85.01</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>321.35</td>
+                            <td>158.98</td>
+                            <td class="improvement">↓ 50.53%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>14007.34</td>
+                            <td>504.94</td>
+                            <td class="improvement">↓ 96.40%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>25.66</td>
+                            <td>25.66</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>217.37</td>
+                            <td>217.37</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>191.71</td>
+                            <td>191.71</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -261.90 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 504.94 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Min_HorsTT_Dec24</h3>
+                    <p><strong>Total Outliers:</strong> 8277 (8.91% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 8277</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Min_HorsTT_Dec24.png" class="plot-image" alt="Distribution plot for Min_HorsTT_Dec24">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>9667.13</td>
+                            <td>513.13</td>
+                            <td>-9154.00</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>194.31</td>
+                            <td>152.69</td>
+                            <td>-41.62</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>89.14</td>
+                            <td>89.14</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>325.12</td>
+                            <td>160.82</td>
+                            <td class="improvement">↓ 50.53%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>9667.13</td>
+                            <td>513.13</td>
+                            <td class="improvement">↓ 94.69%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>29.88</td>
+                            <td>29.88</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>223.18</td>
+                            <td>223.18</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>193.30</td>
+                            <td>193.30</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -260.07 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 513.13 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Min_HorsTT_Nov24</h3>
+                    <p><strong>Total Outliers:</strong> 7947 (8.55% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 7947</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Min_HorsTT_Nov24.png" class="plot-image" alt="Distribution plot for Min_HorsTT_Nov24">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>8362.36</td>
+                            <td>527.51</td>
+                            <td>-7834.85</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>198.05</td>
+                            <td>158.80</td>
+                            <td>-39.25</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>96.36</td>
+                            <td>96.36</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>316.82</td>
+                            <td>162.73</td>
+                            <td class="improvement">↓ 48.64%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>8362.36</td>
+                            <td>527.51</td>
+                            <td class="improvement">↓ 93.69%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>34.69</td>
+                            <td>34.69</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>231.82</td>
+                            <td>231.82</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>197.13</td>
+                            <td>197.13</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -261.00 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 527.51 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Nbr_Recharges_Jan25</h3>
+                    <p><strong>Total Outliers:</strong> 5992 (6.45% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 5992</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Nbr_Recharges_Jan25.png" class="plot-image" alt="Distribution plot for Nbr_Recharges_Jan25">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>196.00</td>
+                            <td>18.00</td>
+                            <td>-178.00</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>7.22</td>
+                            <td>6.61</td>
+                            <td>-0.61</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>5.00</td>
+                            <td>5.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>7.18</td>
+                            <td>5.01</td>
+                            <td class="improvement">↓ 30.29%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>196.00</td>
+                            <td>18.00</td>
+                            <td class="improvement">↓ 90.82%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>3.00</td>
+                            <td>3.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>9.00</td>
+                            <td>9.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>6.00</td>
+                            <td>6.00</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -6.00 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 18.00 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Nbr_Recharges_Dec24</h3>
+                    <p><strong>Total Outliers:</strong> 5570 (5.99% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 5570</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Nbr_Recharges_Dec24.png" class="plot-image" alt="Distribution plot for Nbr_Recharges_Dec24">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>138.00</td>
+                            <td>19.00</td>
+                            <td>-119.00</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>7.82</td>
+                            <td>7.25</td>
+                            <td>-0.57</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>6.00</td>
+                            <td>6.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>7.09</td>
+                            <td>4.99</td>
+                            <td class="improvement">↓ 29.65%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>138.00</td>
+                            <td>19.00</td>
+                            <td class="improvement">↓ 86.23%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>4.00</td>
+                            <td>4.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>10.00</td>
+                            <td>10.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>6.00</td>
+                            <td>6.00</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -5.00 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 19.00 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: ARPU_Nov24</h3>
+                    <p><strong>Total Outliers:</strong> 5409 (5.82% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 5409</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_ARPU_Nov24.png" class="plot-image" alt="Distribution plot for ARPU_Nov24">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>-100.00</td>
+                            <td>-100.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>27731.09</td>
+                            <td>795.02</td>
+                            <td>-26936.07</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>291.97</td>
+                            <td>269.21</td>
+                            <td>-22.76</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>205.23</td>
+                            <td>205.23</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>330.96</td>
+                            <td>219.69</td>
+                            <td class="improvement">↓ 33.62%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>27831.09</td>
+                            <td>895.02</td>
+                            <td class="improvement">↓ 96.78%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>101.66</td>
+                            <td>101.66</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>379.00</td>
+                            <td>379.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>277.34</td>
+                            <td>277.34</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -314.35 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 795.02 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <div class="plot-container">
+                    <h3>Column: Nbr_Recharges_Nov24</h3>
+                    <p><strong>Total Outliers:</strong> 5407 (5.82% of data)</p>
+                    <p><strong>Lower Outliers:</strong> 0 | <strong>Upper Outliers:</strong> 5407</p>
+                    
+                    <img src="../Cleaned_Data/plots/distribution_Nbr_Recharges_Nov24.png" class="plot-image" alt="Distribution plot for Nbr_Recharges_Nov24">
+                    
+                    <h4>Statistical Comparison</h4>
+                    <table class="stats-table">
+                        <tr>
+                            <th>Statistic</th>
+                            <th>Before Cleaning</th>
+                            <th>After Cleaning</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Minimum</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum</td>
+                            <td>307.00</td>
+                            <td>19.00</td>
+                            <td>-288.00</td>
+                        </tr>
+                        <tr>
+                            <td>Mean</td>
+                            <td>7.79</td>
+                            <td>7.22</td>
+                            <td>-0.57</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>6.00</td>
+                            <td>6.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Deviation</td>
+                            <td>7.12</td>
+                            <td>4.97</td>
+                            <td class="improvement">↓ 30.22%</td>
+                        </tr>
+                        <tr>
+                            <td>Range</td>
+                            <td>307.00</td>
+                            <td>19.00</td>
+                            <td class="improvement">↓ 93.81%</td>
+                        </tr>
+                        <tr>
+                            <td>Q1 (25th percentile)</td>
+                            <td>4.00</td>
+                            <td>4.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 (75th percentile)</td>
+                            <td>10.00</td>
+                            <td>10.00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>IQR</td>
+                            <td>6.00</td>
+                            <td>6.00</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Outlier Boundaries</h4>
+                    <ul>
+                        <li><strong>Lower Bound:</strong> -5.00 (values below this were capped)</li>
+                        <li><strong>Upper Bound:</strong> 19.00 (values above this were capped)</li>
+                    </ul>
+                </div>
+            
+                <h2>Cleaning Actions Summary</h2>
+                
+                <h3>Missing Value Treatment</h3>
+                <table>
+                    <tr>
+                        <th>Column</th>
+                        <th>Missing Count</th>
+                        <th>Method</th>
+                    </tr>
+        
+                    <tr>
+                        <td>Min_TT_Nov24</td>
+                        <td>1</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_TT_Dec24</td>
+                        <td>2021</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_TT_Jan25</td>
+                        <td>4000</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_HorsTT_Nov24</td>
+                        <td>1</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_HorsTT_Dec24</td>
+                        <td>2021</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_HorsTT_Jan25</td>
+                        <td>4000</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_TT_ServiceClient_Nov24</td>
+                        <td>1</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_TT_ServiceClient_Dec24</td>
+                        <td>2021</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                    <tr>
+                        <td>Min_TT_ServiceClient_Jan25</td>
+                        <td>4000</td>
+                        <td>Replaced with 0</td>
+                    </tr>
+            
+                </table>
+                
+                <h3>Negative Value Treatment</h3>
+                <table>
+                    <tr>
+                        <th>Column</th>
+                        <th>Negative Count</th>
+                        <th>Method</th>
+                    </tr>
+        
+                    <tr>
+                        <td>ARPU_Nov24</td>
+                        <td>9</td>
+                        <td>Capped extreme negative values</td>
+                    </tr>
+            
+                    <tr>
+                        <td>ARPU_Dec24</td>
+                        <td>15</td>
+                        <td>Capped extreme negative values</td>
+                    </tr>
+            
+                    <tr>
+                        <td>ARPU_Jan25</td>
+                        <td>5</td>
+                        <td>Capped extreme negative values</td>
+                    </tr>
+            
+                </table>
+                
+                <div class="footer">
+                    <p>Cleaning process completed on 2025-06-17 04:51:30 by AmineZouaghi</p>
+                    <p>Telecom Customer Churn Analysis Project</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        

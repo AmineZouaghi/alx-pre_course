@@ -1,0 +1,203 @@
+[2025-06-17 04:10:42] Loading data...
+[2025-06-17 04:10:42] Successfully loaded data with utf-8 encoding
+[2025-06-17 04:10:42] Data loaded: 92943 rows and 21 columns
+[2025-06-17 04:10:42] Performing initial data diagnosis...
+[2025-06-17 04:10:42] Found missing values in 9 columns:
+[2025-06-17 04:10:42]   - Min_TT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:10:42]   - Min_TT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:10:42]   - Min_TT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:10:42]   - Min_HorsTT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:10:42]   - Min_HorsTT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:10:42]   - Min_HorsTT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:10:42]   - Min_TT_ServiceClient_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:10:42]   - Min_TT_ServiceClient_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:10:42]   - Min_TT_ServiceClient_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:10:42] Found negative values in 3 columns:
+[2025-06-17 04:10:42]   - ARPU_Nov24: 280 negative values (0.30%)
+[2025-06-17 04:10:42]   - ARPU_Dec24: 441 negative values (0.47%)
+[2025-06-17 04:10:42]   - ARPU_Jan25: 452 negative values (0.49%)
+[2025-06-17 04:10:42] Checking for duplicates...
+[2025-06-17 04:10:42] No duplicates found
+[2025-06-17 04:10:42] Handling missing values...
+[2025-06-17 04:10:42] Missing values before: 18066
+[2025-06-17 04:10:42] Missing values after: 0
+[2025-06-17 04:10:42] Fixed 18066 missing values
+[2025-06-17 04:10:42] Fixing negative values...
+[2025-06-17 04:10:42] Fixed 29 negative values across 3 columns
+[2025-06-17 04:10:42] Handling extreme outliers...
+[2025-06-17 04:10:42] Capped 8464 extreme outliers across 19 columns
+[2025-06-17 04:10:42] Standardizing binary columns...
+[2025-06-17 04:10:42] Binary columns already standardized
+[2025-06-17 04:10:43] Cleaning complete! Data saved to Cleaned_Data/cleaned_tunisie_telecom_data.csv
+[2025-06-17 04:10:43] Summary report saved to Cleaned_Data/cleaning_summary.md
+[2025-06-17 04:34:25] Loading data...
+[2025-06-17 04:34:25] Successfully loaded data with utf-8 encoding
+[2025-06-17 04:34:25] Data loaded: 92943 rows and 21 columns
+[2025-06-17 04:34:25] Performing initial data diagnosis...
+[2025-06-17 04:34:25] Found missing values in 9 columns:
+[2025-06-17 04:34:25]   - Min_TT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:34:25]   - Min_TT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:34:25]   - Min_TT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:34:25]   - Min_HorsTT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:34:25]   - Min_HorsTT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:34:25]   - Min_HorsTT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:34:25]   - Min_TT_ServiceClient_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:34:25]   - Min_TT_ServiceClient_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:34:25]   - Min_TT_ServiceClient_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:34:25] Found negative values in 3 columns:
+[2025-06-17 04:34:25]   - ARPU_Nov24: 280 negative values (0.30%)
+[2025-06-17 04:34:25]   - ARPU_Dec24: 441 negative values (0.47%)
+[2025-06-17 04:34:25]   - ARPU_Jan25: 452 negative values (0.49%)
+[2025-06-17 04:34:25] Checking for duplicates...
+[2025-06-17 04:34:26] No duplicates found
+[2025-06-17 04:34:26] Handling missing values...
+[2025-06-17 04:34:26] Missing values before: 18066
+[2025-06-17 04:34:26] Missing values after: 0
+[2025-06-17 04:34:26] Fixed 18066 missing values
+[2025-06-17 04:34:26] Fixing negative values...
+[2025-06-17 04:34:26] Fixed 29 negative values across 3 columns
+[2025-06-17 04:34:26] Handling extreme outliers...
+[2025-06-17 04:34:26] Capped 8464 extreme outliers across 19 columns
+[2025-06-17 04:34:26] Standardizing binary columns...
+[2025-06-17 04:34:26] Binary columns already standardized
+[2025-06-17 04:34:26] Cleaning complete! Data saved to Cleaned_Data/cleaned_tunisie_telecom_data.csv
+[2025-06-17 04:34:26] Summary report saved to Cleaned_Data/cleaning_summary.md
+[2025-06-17 04:41:39] Loading data...
+[2025-06-17 04:41:39] Successfully loaded data with utf-8 encoding
+[2025-06-17 04:41:39] Data loaded: 92943 rows and 21 columns
+[2025-06-17 04:41:39] Performing initial data diagnosis...
+[2025-06-17 04:41:39] Found missing values in 9 columns:
+[2025-06-17 04:41:39]   - Min_TT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:41:39]   - Min_TT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:41:39]   - Min_TT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:41:39]   - Min_HorsTT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:41:39]   - Min_HorsTT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:41:39]   - Min_HorsTT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:41:39]   - Min_TT_ServiceClient_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:41:39]   - Min_TT_ServiceClient_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:41:39]   - Min_TT_ServiceClient_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:41:39] Found negative values in 3 columns:
+[2025-06-17 04:41:39]   - ARPU_Nov24: 280 negative values (0.30%)
+[2025-06-17 04:41:39]   - ARPU_Dec24: 441 negative values (0.47%)
+[2025-06-17 04:41:39]   - ARPU_Jan25: 452 negative values (0.49%)
+[2025-06-17 04:41:39] Checking for duplicates...
+[2025-06-17 04:41:39] No duplicates found
+[2025-06-17 04:41:39] Handling missing values...
+[2025-06-17 04:41:39] Missing values before: 18066
+[2025-06-17 04:41:39] Missing values after: 0
+[2025-06-17 04:41:39] Fixed 18066 missing values
+[2025-06-17 04:41:39] Fixing negative values...
+[2025-06-17 04:41:39] Fixed 29 negative values across 3 columns
+[2025-06-17 04:41:39] Handling outliers using IQR method...
+[2025-06-17 04:41:39] Capped 215838 outliers using IQR method across 19 columns
+[2025-06-17 04:41:39] Standardizing binary columns...
+[2025-06-17 04:41:40] Binary columns already standardized
+[2025-06-17 04:41:40] Error during data cleaning: [Errno 13] Permission denied: 'Cleaned_Data/cleaned_tunisie_telecom_data.csv'
+[2025-06-17 04:41:40] Traceback (most recent call last):
+  File "C:\Users\MSI\OneDrive\Desktop\PFE VF\telecom_data_cleaning.py", line 281, in <module>
+    df.to_csv(output_file, index=False, encoding='utf-8')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\MSI\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "c:\Users\MSI\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path_or_buf,
+        ^^^^^^^^^^^^
+    ...<14 lines>...
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\Users\MSI\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\formats\format.py", line 1014, in to_csv
+    csv_formatter.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\MSI\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ~~~~~~~~~~^
+        self.filepath_or_buffer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        storage_options=self.storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handles:
+    ^
+  File "c:\Users\MSI\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+PermissionError: [Errno 13] Permission denied: 'Cleaned_Data/cleaned_tunisie_telecom_data.csv'
+
+[2025-06-17 04:42:40] Loading data...
+[2025-06-17 04:42:40] Successfully loaded data with utf-8 encoding
+[2025-06-17 04:42:40] Data loaded: 92943 rows and 21 columns
+[2025-06-17 04:42:40] Performing initial data diagnosis...
+[2025-06-17 04:42:40] Found missing values in 9 columns:
+[2025-06-17 04:42:40]   - Min_TT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:42:40]   - Min_TT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:42:40]   - Min_TT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:42:40]   - Min_HorsTT_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:42:40]   - Min_HorsTT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:42:40]   - Min_HorsTT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:42:40]   - Min_TT_ServiceClient_Nov24: 1 missing values (0.00%)
+[2025-06-17 04:42:40]   - Min_TT_ServiceClient_Dec24: 2021 missing values (2.17%)
+[2025-06-17 04:42:40]   - Min_TT_ServiceClient_Jan25: 4000 missing values (4.30%)
+[2025-06-17 04:42:40] Found negative values in 3 columns:
+[2025-06-17 04:42:40]   - ARPU_Nov24: 280 negative values (0.30%)
+[2025-06-17 04:42:40]   - ARPU_Dec24: 441 negative values (0.47%)
+[2025-06-17 04:42:40]   - ARPU_Jan25: 452 negative values (0.49%)
+[2025-06-17 04:42:40] Checking for duplicates...
+[2025-06-17 04:42:40] No duplicates found
+[2025-06-17 04:42:40] Handling missing values...
+[2025-06-17 04:42:40] Missing values before: 18066
+[2025-06-17 04:42:40] Missing values after: 0
+[2025-06-17 04:42:40] Fixed 18066 missing values
+[2025-06-17 04:42:40] Fixing negative values...
+[2025-06-17 04:42:40] Fixed 29 negative values across 3 columns
+[2025-06-17 04:42:40] Handling outliers using IQR method...
+[2025-06-17 04:42:40] Capped 215838 outliers using IQR method across 19 columns
+[2025-06-17 04:42:40] Standardizing binary columns...
+[2025-06-17 04:42:40] Binary columns already standardized
+[2025-06-17 04:42:41] Generating distribution plots for report...
+[2025-06-17 04:42:56] Cleaning complete!
+[2025-06-17 04:42:56] Cleaned data saved to Cleaned_Data/cleaned_tunisie_telecom_data.csv
+[2025-06-17 04:42:56] Summary report saved to Cleaned_Data/cleaning_summary.md
+[2025-06-17 04:42:56] Detailed HTML report saved to Cleaned_Data/rapport.html
+[2025-06-17 05:56:11] Loading data...
+[2025-06-17 05:56:11] Successfully loaded data with utf-8 encoding
+[2025-06-17 05:56:11] Data loaded: 92943 rows and 21 columns
+[2025-06-17 05:56:11] Performing initial data diagnosis...
+[2025-06-17 05:56:11] Found missing values in 9 columns:
+[2025-06-17 05:56:11]   - Min_TT_Nov24: 1 missing values (0.00%)
+[2025-06-17 05:56:11]   - Min_TT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 05:56:11]   - Min_TT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 05:56:11]   - Min_HorsTT_Nov24: 1 missing values (0.00%)
+[2025-06-17 05:56:11]   - Min_HorsTT_Dec24: 2021 missing values (2.17%)
+[2025-06-17 05:56:11]   - Min_HorsTT_Jan25: 4000 missing values (4.30%)
+[2025-06-17 05:56:11]   - Min_TT_ServiceClient_Nov24: 1 missing values (0.00%)
+[2025-06-17 05:56:11]   - Min_TT_ServiceClient_Dec24: 2021 missing values (2.17%)
+[2025-06-17 05:56:11]   - Min_TT_ServiceClient_Jan25: 4000 missing values (4.30%)
+[2025-06-17 05:56:11] Found negative values in 3 columns:
+[2025-06-17 05:56:11]   - ARPU_Nov24: 280 negative values (0.30%)
+[2025-06-17 05:56:11]   - ARPU_Dec24: 441 negative values (0.47%)
+[2025-06-17 05:56:11]   - ARPU_Jan25: 452 negative values (0.49%)
+[2025-06-17 05:56:11] Checking for duplicates...
+[2025-06-17 05:56:11] No duplicates found
+[2025-06-17 05:56:11] Handling missing values...
+[2025-06-17 05:56:11] Missing values before: 18066
+[2025-06-17 05:56:11] Missing values after: 0
+[2025-06-17 05:56:11] Fixed 18066 missing values
+[2025-06-17 05:56:11] Fixing negative values...
+[2025-06-17 05:56:11] Fixed 29 negative values across 3 columns
+[2025-06-17 05:56:11] Handling outliers using IQR method...
+[2025-06-17 05:56:11] Capped 91820 outliers using IQR method across 13 columns
+[2025-06-17 05:56:11] Standardizing binary columns...
+[2025-06-17 05:56:11] Binary columns already standardized
+[2025-06-17 05:56:12] Generating distribution plots for report...
+[2025-06-17 05:56:47] Cleaning complete!
+[2025-06-17 05:56:47] Cleaned data saved to Cleaned_Data/cleaned_tunisie_telecom_data.csv
+[2025-06-17 05:56:47] Summary report saved to Cleaned_Data/cleaning_summary.md
+[2025-06-17 05:56:47] Detailed HTML report saved to Cleaned_Data/rapport.html
+[2025-06-17 05:56:47] Distribution plots saved to Cleaned_Data/plots
